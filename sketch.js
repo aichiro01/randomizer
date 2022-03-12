@@ -1,13 +1,13 @@
 //Japanse Culture
 
-
+let facts = ["armor", "katana", "sake", "mask", "robe"]
 
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 }
 
 function draw() {
-  background(220);
+  background(200);
 }
