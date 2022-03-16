@@ -1,43 +1,58 @@
-//Japanse Culture
+//Japanese Culture
 
-let facts = [{
-      name: "armor",
-      color: "black color"
-    }, {
-      name: "katana",
-      color: "gold"
-    }, {
-      name: "sake",
-      color: "white color"
-    }, {
-      name: "mask",
-      color: "dark oak"
-    }, {
-      name: "robe",
-      color: "baige color"}];
+let image = [];
+let captions = [
+    'ぐそく (Gusoku)',
+    '大小 (Daishō)',
+    '太鼓 (Taiko)',
+    'マスク (Mask)',
+    '小袖 (Kosode)'
+];
+let ranNum;
+
+let button;
 
 let randomIndex;
 
-    function setup() {
-      createCanvas(600, 600);
-      background(200);
+let img;
 
+function setup() {
+  createCanvas(600,600);
+  background(img);
 
+  for (i = 0; i <= 4; i++) {
+    image[i] = loadImage('assets/' + [i] + '.jpg');
+    }
+  ranNum= int(random(image.length));
+  console.log(image[ranNum]);
+  console.log(captions[ranNum]);
 
+  textSize(45);
+  text("始める", 240, 50)
+  textAlign(CENTER);
 
-
-
-
-
+  button = createButton('つぎ');
+  button.position(275, 450);
     }
 
-    function draw() {
+    function draw() {}
 
-    }
+function mousePressed(){
+if (captions[0]) {
 
-    function mousePressed(){
-      background(random(200, 255));
-      randomIndex = int(random(facts.length));
-      text(facts[randomIndex].name, 50, 50);
-      facts.splice(randomIndex, 1);
-    }
+      background(img);
+      randomIndex = int(random(captions.length));
+      background(image[randomIndex]);
+      text(captions[randomIndex], 300, 50);
+      captions.splice(randomIndex, 1);
+      image.splice(randomIndex, 1);
+
+  }else{
+    background(img);
+    text("終わりです。", 310, 50);
+  }
+  }
+
+  function preload() {
+    img = loadImage('wallpaper.jpg');
+  }
