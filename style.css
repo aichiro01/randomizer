@@ -1,7 +1,33 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: #F4F3EF;
 }
-canvas {
+
+#myCanvas canvas {
   display: block;
+  margin:auto;
+  padding: 50px;
+}
+
+button {
+  margin: auto;
+  display: block;
+  padding: 10px;
+  color: black;
+  background-color: #FF0000;
+  border-radius: 50%;
+  border-style: solid;
+  width: 100px;
+  height: 100px;
+  outline: none;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }

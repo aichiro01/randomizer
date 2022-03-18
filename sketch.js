@@ -10,14 +10,13 @@ let captions = [
 ];
 let ranNum;
 
-let button;
-
 let randomIndex;
 
 let img;
 
 function setup() {
-  createCanvas(600,600);
+  let canvas = createCanvas(windowWidth*0.6, (windowWidth*0.6)*1.25);
+  canvas.parent('myCanvas');
   background(img);
 
   for (i = 0; i <= 4; i++) {
@@ -27,29 +26,36 @@ function setup() {
   console.log(image[ranNum]);
   console.log(captions[ranNum]);
 
-  textSize(45);
-  text("始める", 240, 50)
-  textAlign(CENTER);
+  textSize(30);
+  fill(255,255,255);
 
-  button = createButton('つぎ');
-  button.position(275, 450);
+ let button = createButton('つぎ');
+ button.parent('button-holder');
+ button.mousePressed(divination);
+
     }
 
-    function draw() {}
+function draw() {
 
-function mousePressed(){
+    }
+
+function windowResized() {
+  resizeCanvas(windowWidth*.6, (windowWidth*.6)*1.25);
+    }
+
+function divination(){
 if (captions[0]) {
 
       background(img);
       randomIndex = int(random(captions.length));
       background(image[randomIndex]);
-      text(captions[randomIndex], 300, 50);
+      text(captions[randomIndex], 200, 50);
       captions.splice(randomIndex, 1);
       image.splice(randomIndex, 1);
 
   }else{
     background(img);
-    text("終わりです。", 310, 50);
+    text("終わりです。", 230, 50);
   }
   }
 
