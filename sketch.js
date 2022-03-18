@@ -49,13 +49,13 @@ if (captions[0]) {
       background(img);
       randomIndex = int(random(captions.length));
       background(image[randomIndex]);
-      text(captions[randomIndex], 200, 50);
+      text(captions[randomIndex], 350, 50);
       captions.splice(randomIndex, 1);
       image.splice(randomIndex, 1);
 
   }else{
     background(img);
-    text("終わりです。", 230, 50);
+    text("終わりです。", 365, 50);
   }
   }
 
