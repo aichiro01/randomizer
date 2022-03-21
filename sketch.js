@@ -28,7 +28,7 @@ function setup() {
 
   textSize(30);
   fill(255,255,255);
-
+  textAlign(CENTER);
  let button = createButton('つぎ');
  button.parent('button-holder');
  button.mousePressed(divination);
@@ -36,11 +36,6 @@ function setup() {
     }
 
 function draw() {
-
-    }
-
-function windowResized() {
-  resizeCanvas(windowWidth*.6, (windowWidth*.6)*1.25);
     }
 
 function divination(){
@@ -49,13 +44,13 @@ if (captions[0]) {
       background(img);
       randomIndex = int(random(captions.length));
       background(image[randomIndex]);
-      text(captions[randomIndex], 350, 50);
+      text(captions[randomIndex], width/2, height*0.2);
       captions.splice(randomIndex, 1);
       image.splice(randomIndex, 1);
 
   }else{
     background(img);
-    text("終わりです。", 365, 50);
+    text("終わりです。", width/2, height*0.2);
   }
   }
 
