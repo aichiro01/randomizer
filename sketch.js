@@ -6,7 +6,8 @@ let captions = [
     '大小 (Daishō)',
     '太鼓 (Taiko)',
     'マスク (Mask)',
-    '小袖 (Kosode)'
+    '小袖 (Kosode)',
+    'アーティスト・ステートメント'
 ];
 let ranNum;
 
@@ -17,9 +18,13 @@ let img;
 function setup() {
   let canvas = createCanvas(windowWidth*0.6, (windowWidth*0.6)*1.25);
   canvas.parent('myCanvas');
+
   background(img);
 
-  for (i = 0; i <= 4; i++) {
+
+
+
+  for (i = 0; i <= 5; i++) {
     image[i] = loadImage('assets/' + [i] + '.jpg');
     }
   ranNum= int(random(image.length));
@@ -27,8 +32,9 @@ function setup() {
   console.log(captions[ranNum]);
 
   textSize(30);
-  fill(255,255,255);
+  fill(0, 0, 0);
   textAlign(CENTER);
+
  let button = createButton('つぎ');
  button.parent('button-holder');
  button.mousePressed(divination);
@@ -50,9 +56,11 @@ if (captions[0]) {
 
   }else{
     background(img);
-    text("終わりです。", width/1.92, height*0.1);
+    text("終わりです。", width/2, height*0.1);
+
   }
   }
+
 
   function preload() {
     img = loadImage('wallpaper.jpg');
